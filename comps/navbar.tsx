@@ -22,9 +22,9 @@ export const Navbar = () => {
           </Link>
           <div className="sub-menu">
             {m=="about"?AboutMenu.map((mm,ii) =>
-              <Link key={ii} href={m+"#"+mm.replaceAll(" ","")}>{mm.toUpperCase()}</Link>
+              <Link key={ii} href={m+"#"+mm.replace(/\s/g, "")}>{mm.toUpperCase()}</Link>
             ):m=="programs"?ProgramMenu.map((mm,ii) =>
-              <Link key={ii} href={m+"#"+mm.replaceAll(" ","")}>{mm.toUpperCase()}</Link>
+              <Link key={ii} href={m+"#"+mm.replace(/\s/g, "")}>{mm.toUpperCase()}</Link>
             // ):m=="news"?NewsMenu.map((mm,ii) =>
             //   <Link key={ii} href={"/"+mm.trim()}>{mm.toUpperCase()}</Link>
             ):""}
