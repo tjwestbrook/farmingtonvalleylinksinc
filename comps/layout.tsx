@@ -8,6 +8,7 @@ export default function Layout ({ children }: {children:ReactElement}): JSX.Elem
     <div className='container'>
       <Navbar />
       <main className='main'>
+        <h1 className='title'>Greetings From Farmington Valley Links</h1>
         {children}
       </main>
       <Footer />

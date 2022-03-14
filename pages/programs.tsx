@@ -1,11 +1,13 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 
+const myLoader =( src:String ) => `https://drive.google.com/uc?content=view&id=${src}`
+
 const Programs: NextPage = () => {
   return <>
     <p className='greeting'>
-      The outstanding programming of The Links, Incorporated has five facets which include Services to
-      Youth, The Arts, National Trends and Services, International Trends and Services and Health and
+      The outstanding programming of The Links, Incorporated has five facets which include The Arts,
+      Services to Youth, National Trends and Services, International Trends and Services and Health and
       Human Services. The programs are implemented through strategies such as public information and
       education, economic development, and public policy campaigns.
     </p>
@@ -38,17 +40,25 @@ const Programs: NextPage = () => {
       </section>
 
       <Image className='image'
-        src="/filler.png"
-        alt="the arts"
-        width={400}
-        height={300}
+        src={myLoader("1eJVXCnnjj32DwWThyl3eEcMxcQLut7xs")}
+        alt="The Arts"
+        objectFit="contain"
+        quality={100}
+        width={750}
+        height={750}
+        // placeholder="blur"
+        // blurDataURL={myLoader("1eJVXCnnjj32DwWThyl3eEcMxcQLut7xs")}
       />
 
       <Image className='image'
-        src="/filler.png"
-        alt="service to youth"
-        width={400}
-        height={300}
+        src={myLoader("1sfjccpFVosJGPpzk6zK63tf8pHmUytlN")}
+        alt="Service to Youth"
+        objectFit="contain"
+        quality={100}
+        width={750}
+        height={750}
+        // placeholder="blur"
+        // blurDataURL={myLoader("1sfjccpFVosJGPpzk6zK63tf8pHmUytlN")}
       />
 
       <section className='parag'>
@@ -92,24 +102,32 @@ const Programs: NextPage = () => {
           needs for subsistence.
           <br /><br />
           The current strategic goal is to engage in a mentorship program that will enable women to succeed
-          in all aspects of their lives - i.e., “Women supporting women”. The strategic partnership is with a
+          in all aspects of their lives - i.e., “women supporting women”. The strategic partnership is with a
           local non-profit organization committed to empowering women in recovery from the criminal
           justice system to make positive behavioral changes in their lives.
         </p>
       </section>
 
       <Image className='image'
-        src="/filler.png"
-        alt="national trends and services"
-        width={400}
-        height={300}
+        src={myLoader("1vzxJSfUBDAmlqkwaZZoKllTHJ83d-Ryr")}
+        alt="National Trends & Services"
+        objectFit="contain"
+        quality={100}
+        width={750}
+        height={750}
+        // placeholder="blur"
+        // blurDataURL={("1vzxJSfUBDAmlqkwaZZoKllTHJ83d-Ryr")}
       />
 
       <Image className='image'
-        src="/filler.png"
-        alt="international trends and services"
-        width={400}
-        height={300}
+        src={myLoader("1YxQgUUD8HNQHXpG-LorevbbPbC7aOr9O")}
+        alt="International Trends & Services"
+        objectFit="contain"
+        quality={100}
+        width={750}
+        height={750}
+        // placeholder="blur"
+        // blurDataURL={("1YxQgUUD8HNQHXpG-LorevbbPbC7aOr9O")}
       />
 
       <section className='parag'>
@@ -162,10 +180,14 @@ const Programs: NextPage = () => {
       </section>
 
       <Image className='image'
-        src="/filler.png"
-        alt="health and human services"
-        width={400}
-        height={300}
+        src={myLoader("1OUIMqnLJhoxppwP31f3G4BWL5b-yN4s3")}
+        alt="Health & Human Services"
+        objectFit="contain"
+        quality={100}
+        width={750}
+        height={750}
+        // placeholder="blur"
+        // blurDataURL={("1OUIMqnLJhoxppwP31f3G4BWL5b-yN4s3")}
       />
 
     </div>

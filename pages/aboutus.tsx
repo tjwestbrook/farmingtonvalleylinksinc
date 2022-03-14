@@ -1,21 +1,15 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 
+const myLoader =( src:String ) => `https://drive.google.com/uc?content=view&id=${src}`
+
 const About: NextPage = () => {
   return <>
-    <h1 className='title'>Leading with Excellence, Serving with Grace</h1>
-
     <p className='greeting'>
-      Welcome to the website of the Farmington Valley Chapter of The Links, Incorporated. The Links,
-      Incorporated is an international, not-for-profit organization established in 1946. The membership
-      consists of more than 16,000 professional women of color in 292 chapters throughout the United
-      States, United Kingdom, and the Commonwealth of the Bahamas. It is one of the nation’s oldest
-      and largest volunteer service organizations of extraordinary and talented women who are
-      committed to enriching, sustaining, and ensuring the culture and economic survival of African
-      Americans and other persons of African ancestry.
-      The Links has a long tradition of engaging in educational, civic and inter-cultural activities in the
-      communities we serve. We are influential decision makers, opinion leaders, and distinguished
-      achievers, and contribute more than 1 million documented hours of community service annually.
+      Welcome to Farmington Valley Chapter of The Links,
+      Incorporated, the first suburban chapter in New England’s
+      Nutmeg state, Connecticut. Small, but mighty, we are a chapter
+      of accomplished women, “Linked in Friendship, Connected in Service”.
     </p>
 
     <div className='grid'>
@@ -64,17 +58,25 @@ const About: NextPage = () => {
       </section>
 
       <Image className='image'
-        src="/filler.png"
+        src={myLoader("1GeVuwLa4cqvmAOYFM4QK88y-QEIGVNhh")}
         alt="Chapter President"
-        width={400}
-        height={300}
+        objectFit="contain"
+        quality={100}
+        width={750}
+        height={750}
+        // placeholder="blur"
+        // blurDataURL={myLoader("1GeVuwLa4cqvmAOYFM4QK88y-QEIGVNhh")}
       />
 
       <Image className='image'
-        src="/filler.png"
+        src={myLoader("1kPcwiG0SdXddja8oHjFZmWL5DRNlZFLM")}
         alt="Chapter History"
-        width={400}
-        height={300}
+        objectFit="contain"
+        quality={100}
+        width={750}
+        height={750}
+        // placeholder="blur"
+        // blurDataURL={myLoader("1kPcwiG0SdXddja8oHjFZmWL5DRNlZFLM")}
       />
 
       <section className='parag'>
@@ -153,10 +155,14 @@ const About: NextPage = () => {
       </section>
 
       <Image className='image'
-        src="/filler.png"
+        src={myLoader("124iDYuBBq0YqVMfrs9DcvDYarkn6gexO")}
         alt="Chapter Members"
-        width={400}
-        height={300}
+        objectFit="contain"
+        quality={100}
+        width={750}
+        height={750}
+        // placeholder="blur"
+        // blurDataURL={myLoader("124iDYuBBq0YqVMfrs9DcvDYarkn6gexO")}
       />
 
     </div>

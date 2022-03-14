@@ -1,14 +1,15 @@
 import Link from 'next/link'
 import { Logo }  from './logo'
-import {  useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
-const NavMenu = ["home","about","programs","news","contact"/*,"members only"*/];
-const AboutMenu = ["presidents message","chapter history","chapter members"]
-const ProgramMenu = ["the arts","service to youth","national trends & services","international trends & services","health & human services"]
-// const NewsMenu = [api call]
+const NavMenu = ["home","about us","programs","news","contact","members only"];
+const NewsMenu = ["event 1","scholarship 1"]
 
-function ActiveLink(path: String) {
-  return useRouter().asPath == "/"+(path !== "home" ? path : "") ? "var(--links-color)" : ""
+function Active(p: String) {
+  const activePath = useRouter().asPath
+  const subPath = activePath.indexOf('#')
+  const path = subPath == -1 ? activePath : activePath.substring(0, subPath)
+  return path == "/"+(p == "home" ? "" : p) ? "nav-menu-active" : "nav-menu"
 }
 
 export const Navbar = () => {
@@ -16,18 +17,20 @@ export const Navbar = () => {
     <nav>
       <Logo />
       {NavMenu.map((m,i,a) =>
-        <div key={i} className="nav-menu" style={{ color: ActiveLink(m) }}>
-          <Link key={i} href={"/"+(i==0?"":m)}>
+        <div key={i} className={Active(m.replace(/\s/g, ""))}>
+          <Link key={i} href={"/"+(i==0?"":m.replace(/\s/g, ""))}>
             {m.toUpperCase()}
           </Link>
-          <div className="sub-menu">
-            {m=="about"?AboutMenu.map((mm,ii) =>
-              <Link key={ii} href={m+"#"+mm.replace(/\s/g, "")}>{mm.toUpperCase()}</Link>
-            ):m=="programs"?ProgramMenu.map((mm,ii) =>
-              <Link key={ii} href={m+"#"+mm.replace(/\s/g, "")}>{mm.toUpperCase()}</Link>
-            // ):m=="news"?NewsMenu.map((mm,ii) =>
-            //   <Link key={ii} href={"/"+mm.trim()}>{mm.toUpperCase()}</Link>
-            ):""}
+          <div className="sub-menu">{([
+                [],["presidents message","chapter history","chapter members"],
+                ["the arts","service to youth","national trends & services","international trends & services","health & human services"]
+                ,NewsMenu,[],[]
+              ][i]
+              ).map((mm,ii) =>
+              <Link key={ii} href={m.replace(/\s/g, "")+"#"+mm.replace(/\s/g, "")}>
+                {mm.toUpperCase()}
+              </Link>
+            )}
           </div>
         </div>
       )}

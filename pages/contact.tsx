@@ -6,23 +6,23 @@ const sendEmail = (/*event*/) => {
 }
 
 const Contact: NextPage = () => {
-  return (
+  return <>
     <form onSubmit={sendEmail} className='contact'>
-      <label htmlFor='fname'>First Name</label>
+      <label htmlFor='name'>Name</label>
       <br />
-      <input type='text' id='fname' name='firstname' required />
+      <input type='text' id='fname' name='name' required />
       <br /><br />
-      <label htmlFor='lname'>Last Name</label>
+      <label htmlFor='name'>Email</label>
       <br />
-      <input type='text' id='lname' name='lastname' required />
+      <input type='text' id='email' name='emailaddress' required />
       <br /><br />
-      <label htmlFor='subject'>Subject</label>
+      <label htmlFor='subject'>Message</label>
       <br />
-      <textarea id='subject' name='subject' style={{height: '200px'}}></textarea>
+      <textarea id='subject' name='subject' style={{height: '200px', width: '61.8%'}}></textarea>
       <br /><br />
-      <button type='submit'>Send Email</button>
+      <button type='submit'>Send</button>
     </form>
-  );
+  </>
 }
 
 export default Contact;

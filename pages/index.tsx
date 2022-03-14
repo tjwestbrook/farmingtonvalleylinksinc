@@ -12,10 +12,10 @@ function Fetch(path:String) {
   }
 }
 
+const myLoader = (src:String) => `https://drive.google.com/uc?content=view&id=${src}`
+
 const Home: NextPage = () => {
   return <>
-    <h1 className='title'>Leading with Excellence, Serving with Grace</h1>
-
     <p className='greeting'>
       Welcome to the website of the Farmington Valley Chapter of The Links, Incorporated. The Links,
       Incorporated is an international, not-for-profit organization established in 1946. The membership
@@ -30,34 +30,64 @@ const Home: NextPage = () => {
     </p>
 
     <div className='grid'>
-      <Image className='image'
-        src="/filler.png"
-        alt="Picture of Farmington Valley Chapter Members of Links, Incorporated"
-        width={400}
-        height={300}
-      />
-
       <a href="news#events" className='cards'>
         <h2>Event #1 &rarr;</h2>
         <p>Find more information about our upcoming event!</p>
       </a>
+
+      <Image className='image'
+        src={myLoader("1rGLb8vunifFLe8lYir2g9a_hOvvmuPhv")}
+        alt="Chapter Members of the Farmington Valley Links, Incorporated"
+        objectFit="contain"
+        quality={100}
+        width={500}
+        height={500}
+        // placeholder="blur"
+        // blurDataURL={myLoader("1rGLb8vunifFLe8lYir2g9a_hOvvmuPhv")}
+      />
+
+      <Image className='image'
+        src={myLoader("1-CaZncaRgZzzrN7FQaaIh3Ec9JkOoAbm")}
+        alt="2018 Chapter Members"
+        objectFit="contain"
+        quality={100}
+        width={500}
+        height={500}
+        // placeholder="blur"
+        // blurDataURL={myLoader("1-CaZncaRgZzzrN7FQaaIh3Ec9JkOoAbm")}
+      />
 
       <a href="news#scholarships" className='cards'>
         <h2>Scholarship #1 &rarr;</h2>
         <p>Learn about our scholarship offers by clicking this link!</p>
       </a>
 
-      <Image className='image'
-        src="/filler.png"
-        alt="Picture of Farmington Valley Chapter Members of Links, Incorporated"
-        width={400}
-        height={300}
-      />
-
-      <a href="about#chapterhistory" className='cards'>
+      <a href="aboutus#chapterhistory" className='cards'>
         <h2>About Us &rarr;</h2>
         <p>Click here to hear more about our history.</p>
       </a>
+
+      <Image className='image'
+        src={myLoader("1SJ2l9ZPPnbVzDk-moayc8kGUKTa6I93z")}
+        alt="Founding Members"
+        objectFit="contain"
+        quality={100}
+        width={500}
+        height={500}
+        // placeholder="blur"
+        // blurDataURL={myLoader("1SJ2l9ZPPnbVzDk-moayc8kGUKTa6I93z")}
+      />
+
+      <Image className='image'
+        src={myLoader("19K9Df9Uh7BGVAr0_c23Dg1wGD0tEKokD")}
+        alt="Farmington Valley Chapter Members of Links, Incorporated"
+        objectFit="contain"
+        quality={100}
+        width={500}
+        height={500}
+        // placeholder="blur"
+        // blurDataURL={myLoader("19K9Df9Uh7BGVAr0_c23Dg1wGD0tEKokD")}
+      />
 
       <a href="mailto:fvclinks.president@gmail.com" className='cards'>
         <h2>Contact Us &rarr;</h2>
