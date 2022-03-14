@@ -42,8 +42,8 @@ const Home: NextPage = () => {
         quality={100}
         width={500}
         height={500}
-        // placeholder="blur"
-        // blurDataURL={myLoader("1rGLb8vunifFLe8lYir2g9a_hOvvmuPhv")}
+        placeholder="blur"
+        blurDataURL={myLoader("1rGLb8vunifFLe8lYir2g9a_hOvvmuPhv")}
       />
 
       <Image className='image'
@@ -53,8 +53,8 @@ const Home: NextPage = () => {
         quality={100}
         width={500}
         height={500}
-        // placeholder="blur"
-        // blurDataURL={myLoader("1-CaZncaRgZzzrN7FQaaIh3Ec9JkOoAbm")}
+        placeholder="blur"
+        blurDataURL={myLoader("1-CaZncaRgZzzrN7FQaaIh3Ec9JkOoAbm")}
       />
 
       <a href="news#scholarships" className='cards'>
@@ -74,8 +74,8 @@ const Home: NextPage = () => {
         quality={100}
         width={500}
         height={500}
-        // placeholder="blur"
-        // blurDataURL={myLoader("1SJ2l9ZPPnbVzDk-moayc8kGUKTa6I93z")}
+        placeholder="blur"
+        blurDataURL={myLoader("1SJ2l9ZPPnbVzDk-moayc8kGUKTa6I93z")}
       />
 
       <Image className='image'
@@ -85,8 +85,8 @@ const Home: NextPage = () => {
         quality={100}
         width={500}
         height={500}
-        // placeholder="blur"
-        // blurDataURL={myLoader("19K9Df9Uh7BGVAr0_c23Dg1wGD0tEKokD")}
+        placeholder="blur"
+        blurDataURL={myLoader("19K9Df9Uh7BGVAr0_c23Dg1wGD0tEKokD")}
       />
 
       <a href="mailto:fvclinks.president@gmail.com" className='cards'>
