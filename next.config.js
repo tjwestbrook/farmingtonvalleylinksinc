@@ -4,6 +4,10 @@ const nextConfig = {
   images: {
     domains: ['drive.google.com'],
   },
+  headers: [{
+    key: 'X-API-Key',
+    value: DETA_PROJECT_KEY,
+  }],
 }
 
 module.exports = nextConfig

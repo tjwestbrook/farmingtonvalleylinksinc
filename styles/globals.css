@@ -31,13 +31,13 @@ nav {
 }
 
 .container {
-  padding: 1.5em 1em;
+  padding: 1em;
 }
 
 .main {
   min-height: 100vh;
   max-width: 100vw;
-  padding: 100px 1em;
+  padding: 100px 3em;
   justify-content: center;
   align-items: center;
 }

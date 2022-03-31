@@ -1,32 +1,27 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import useSWR from 'swr'
 
-const fetcher = (...args:[RequestInfo]) => fetch(...args).then((res) => res.json())
-function Fetch(path:String) {
-  const { data, error } = useSWR(`/api/${path}`)
+export async function getStaticProps() {
+  // const { Deta } = require("deta")
+  // const deta = Deta(DETA_PROJECT_KEY)
+  // const db = deta.Base("home")
+  // const data = await db.get("greeting")
+  
+  const res = await fetch(`https://database.deta.sh/v1/b0prrvt9/home`)
+  const data = await res.json()
   return {
-    data: data,
-    isLoading: !error && !data,
-    error: error
+    props: {
+      greeting: data.text,
+    },
   }
 }
 
 const myLoader = (src:String) => `https://drive.google.com/uc?content=view&id=${src}`
 
-const Home: NextPage = () => {
+const Home: NextPage = (props) => {
   return <>
     <p className='greeting'>
-      Welcome to the website of the Farmington Valley Chapter of The Links, Incorporated. The Links,
-      Incorporated is an international, not-for-profit organization established in 1946. The membership
-      consists of more than 16,000 professional women of color in 292 chapters throughout the United
-      States, United Kingdom, and the Commonwealth of the Bahamas. It is one of the nation’s oldest
-      and largest volunteer service organizations of extraordinary and talented women who are
-      committed to enriching, sustaining, and ensuring the culture and economic survival of African
-      Americans and other persons of African ancestry.
-      The Links has a long tradition of engaging in educational, civic and inter-cultural activities in the
-      communities we serve. We are influential decision makers, opinion leaders, and distinguished
-      achievers, and contribute more than 1 million documented hours of community service annually.
+      {props.greeting}
     </p>
 
     <div className='grid'>
