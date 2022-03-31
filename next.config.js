@@ -7,7 +7,7 @@ const nextConfig = {
   source: '/:path*',
   headers: [{
     key: 'X-API-Key',
-    value: DETA_PROJECT_KEY,
+    value: process.env.DETA_PROJECT_KEY,
   }],
 }
 
