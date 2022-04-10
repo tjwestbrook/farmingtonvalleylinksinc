@@ -1,27 +1,45 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
+import useSWR from 'swr'
+import { useRouter } from 'next/router'
 
-export async function getStaticProps() {
-  // const { Deta } = require("deta")
-  // const deta = Deta(DETA_PROJECT_KEY)
-  // const db = deta.Base("home")
-  // const data = await db.get("greeting")
-  
-  const res = await fetch(`https://database.deta.sh/v1/b0prrvt9/home`)
-  const data = await res.json()
-  return {
-    props: {
-      greeting: data.text,
-    },
-  }
+// export async function getStaticProps() {
+//   const { Deta } = require("deta")
+//   const deta = Deta(DETA_PROJECT_KEY)
+//   const db = deta.Base("home")
+//   const data = await db.get("greeting")
+
+// //   const res = await fetch(`https://database.deta.sh/v1/b0prrvt9/home`)
+// //   const data = await res.json()
+//   const greeting = data.text
+//   return {
+//     props: {
+//       greeting,
+//     },
+//   }
+// }
+
+const fetcher = (...args:[RequestInfo]) => fetch(...args).then(res => res.json())
+
+function GetData(key:String) {
+  const path = useRouter().asPath
+  const APIURI = `https://database.deta.sh/v1/b0prrvt9${path=='/'?'/home':path}`
+  const { data, err } = useSWR(APIURI, fetcher)
+
+  if (err) return "failed to load"
+  if (!data) return "loading..."
+  return data
 }
 
-const myLoader = (src:String) => `https://drive.google.com/uc?content=view&id=${src}`
+function myLoader(src: String) {
+  return `https://drive.google.com/uc?content=view&id=${src}`
+}
 
-const Home: NextPage = (props) => {
+const Home: NextPage = () => {
+
   return <>
     <p className='greeting'>
-      {props.greeting}
+      {GetData('greeting')}
     </p>
 
     <div className='grid'>
